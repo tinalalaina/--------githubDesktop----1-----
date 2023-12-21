@@ -1,0 +1,24 @@
+web.php
+Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
+
+------------------
+ProductController.php
+ public function update(Product $product, Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'qty' => 'required|numeric',
+            'price' => 'required|numeric',
+            'description' => 'nullable'
+        ]);
+
+        $product->update($data);
+
+        return redirect(route('product.index'))->with('success', 'Product Updated Succesffully');
+
+    }
+---------------------
+edit.blade.php  modifier
+<form method="post" action="{{route('product.update', ['product' => $product])}}">
+        @csrf 
+        @method('put')
+------------------------

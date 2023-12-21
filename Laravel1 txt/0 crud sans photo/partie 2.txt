@@ -1,0 +1,117 @@
+----------------------------
+http://localhost:8000/product
+Product
+hello tina lalaina
+----------------------------
+routes>web.php
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+----------------------------
+app>Http>Controllers>ProductController.php
+
+ public function create(){
+        return view('products.create');
+    }
+----------------------------
+creation d'un dossier et un fichier
+resources>views>products>create.blade.php
+
+ <h1>Create a Product</h1>
+<form method="post" action="">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" />
+        </div>
+        <div>
+            <label>Qty</label>
+            <input type="text" name="qty" placeholder="Qty" />
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" name="price" placeholder="Price" />
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description" />
+        </div>
+        <div>
+            <input type="submit" value="Save a New Product" />
+        </div>
+    </form>
+
+----------------------------
+*********************
+------------------
+http://localhost:8000/product/create
+Create a Product
+-----------------
+********************
+routes>web.php
+Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+------------------------------
+app>Http>Controllers>ProductController.php
+
+use App\Models\Product;
+---------------------
+public function store(Request $request){
+       dd($request->name);
+    }
+-----------ou----------
+
+
+ public function store(Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'qty' => 'required|numeric',
+            'price' => 'required|numeric',      ici ca doit etre decimal fait une recherche 
+            'description' => 'nullable'
+        ]);
+
+        $newProduct = Product::create($data);
+
+        return redirect(route('product.index'));
+
+    }
+-------------------------------------------
+modification sur
+resources>views>products>create.blade.php
+
+    <form method="post" action="{{route('product.store')}}">
+        @csrf 
+        @method('post')
+-----------------------------
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*+*+*+*+**+*+
+fait une recherche sur utilisation de decimal sur laravel
++*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+*+**+*+*+*+*+*+*+*+*+*+*+*+*+**+*+
+------------------------------
+
+modification sur 
+create.blade.php
+<body>
+    <h1>Create a Product</h1>
+   
+    <form method="post" action="{{route('product.store')}}">
+        @csrf 
+        @method('post')
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name" />
+        </div>
+        <div>
+            <label>Qty</label>
+            <input type="text" name="qty" placeholder="Qty" />
+        </div>
+        <div>
+            <label>Price</label>
+            <input type="text" name="price" placeholder="Price" />
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description" />
+        </div>
+        <div>
+            <input type="submit" value="Save a New Product" />
+        </div>
+    </form>
+</body>
+--------------------------------------
+

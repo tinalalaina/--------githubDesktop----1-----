@@ -1,0 +1,113 @@
+copier crud sur partie 1 et placez le dans laravel crud for beginner master
+allez vers xamp puis creez une bd
+          bd: app-crud
+
+remarque : la diffèrence entre racine
+ git hub                 composer
+app 
+bootstrap
+config
+database               + node_modules
+public
+resources
+routes
+storage
+test                   + vendor
+.ediorconfi            + .env
+.env.example
+gitattributes
+gitignore              + .styleci.yml
+artisan
+composer.json
+composer.lock           + package-lock.json
+package.json
+phpunit.xml
+README.md               + server.php
+                        + webpack.mix.js
+vite.config.js          + sans ceci
+*********************************
+.env 
+DB_DATABASE=app-crud
+------------
+C:\Users\tinalalaina\Desktop\laravel WHITH LOOPING\laravel crud for beginners\crud> php artisan migrate
+(apparition de nouvelle table: failed_jobs;migrations;passwor_resets;personal_access_tokens;users) dans bd
+------------
+C:\Users\tinalalaina\Desktop\laravel WHITH LOOPING\laravel crud for beginners\crud> php artisan make:migration cre
+ate_prodcts_tables
+-----------
+2023_11_12_052229_create_prodcts_tables.php (modifier)
+  Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->integer('qty');
+            $table->decimal('price');
+            $table->text('description');
+            $table->timestamps();
+-------------------------
+C:\Users\tinalalaina\Desktop\laravel WHITH LOOPING\laravel crud for beginners\crud> php artisan migrate
+(apparition de nouvelle table: failed_jobs;migrations;passwor_resets;personal_access_tokens;users)+(poducts) dans bd
+--------------------------
+ C:\Users\tinalalaina\Desktop\laravel WHITH LOOPING\laravel crud for beginners\crud> php artisan make:model Product
+(apparition de Product.php dans (app>Models>Product.php)
+--------------------------
+app>Models>Product.php 
+
+ use HasFactory;
+
+ protected $fillable = [
+        'name',
+        'qty',
+        'price',
+        'description'
+    ];
+--------------------------
+PS C:\Users\tinalalaina\Desktop\laravel WHITH LOOPING\laravel crud for beginners\crud> php artisan make:controller ProductController
+(apparition de ProductController.php dans (app>Http>Controllers>ProductController.php)
+---------------------------
+app>Http>Controllers>ProductController.php
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+    public function index(){
+        return view('products.index');
+        
+    }
+}
+
+---------------------------
+creation d'un dossier et un fichier
+resources>views>products>index.blade.php
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Product</h1>
+          hello tina lalaina
+</body>
+</html>
+-----------------------------
+routes>web.php
+use App\Http\Controllers\ProductController;
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+**************************************
+----------------------------------
+http://localhost:8000/product
+Product
+hello tina lalaina
+----------------------------------
+**************************************
+
+
+
+

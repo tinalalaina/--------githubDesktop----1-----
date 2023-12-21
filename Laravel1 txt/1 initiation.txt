@@ -6,7 +6,7 @@ Nb on peut desinstaller xampp version 7 et d'installer xampp version 8 sans modi
 verification sur terminale : 
    php --version
 =>            composer create-project laravel/laravel crud
-patienter 10 mn  si sans connection
+patienter 10 mn  si sans connection (vaut mieux quand meme un wifi)
 
 =>verifier bien que vendor est là avec le fichier autoload.php
 php artisan serve

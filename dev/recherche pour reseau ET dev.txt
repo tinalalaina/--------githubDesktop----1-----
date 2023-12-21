@@ -1,0 +1,76 @@
+
+trixbox
+net
+pfsense
+eon
+mise en place serveur dns
+free radius
+3cx
+ldap server on ubuntu
+pginaconfiguration
+monitory
+authentification: ldap configuration ldap obj securite gerer l 'authentification des clients centraliser l'authentification des  utilisateur:configuration freeradius sur ubuntu
+16-outils-de-surveillance-de-la-bande-passante-utiles-pour-analyser-lutilisation-du-reseau-sous-linux/
+samba partage de fichier
+serveur de visio conference
+windows serveur
+serveur proxi
+====================================================
+cacti
+*********
+verification d'entrer sortie de connection exemple telma ds l'entreprise
+ 
+ contrat telma
+ debit omen'ny telma ->max
+                     ->minimum
+                   =>verification par cacti
+
+===================================================
+version de linux
+lsb_release -a
+samba=
+======
+
+***************
+porter captif avec authentification avec serveur
+*
+cacti ouvrir le point d 'acces windows
+************
+
+serveur de messagerie DNS SMTP IMAP POP3 avec web mail avec administration via php
+mise en place portait captif avec authentification par mac ldap freeradius
+             serveur d'authentification free radius ldap ,samba pc sous linux avec adminn via php
+gestion de trafic et qos avec linux ,pfsense avec admin via php
+void asterique nat vlan acl (cisco asa , linux et
+=========
+montage de site statique ,creation web
+=============
+l3 reseau
+conception et realisation d'un systeme d'information pour le suivi evaluation des activites d'un projet
+optimisation et securisation des reseau vlan vpn load balancing firewal ids proxy
+dual wan et serveur proxy avec filtrage http et https failover et loadbalancing
+void asterisd ou free swicth (call center user dialplan routageIAX ivr conference
+serveur web,hebergement des sites web appache php oracle
+
+administraion des systeme centralises avec puppet cfengine
+audit de securite system et reseau ids backtrack firewall applicatif et sgbd
+developpement des services vas
+dev apl mobiles avec sig et webservices
+====
+l3 dev
+application web
+generateur de faq intranet
+gestion maintenance assiste ar ordinateur
+centralisation et securisation de donnee
+conception d une apk mobile d 'annulaire d'infrastructure informatique
+elaboratin d'un workflow pour alimenter les site wse
+apk replication de donnees
+
+m2
+conception et realisation d'un systeme d'information ds une entreprise
+analyse informatique et traitement des donnees
+schema directeur informatique d'une entreprise ou d'un organisme
+conception et realisation d'un agl
+administration et installation de reseau sous linuc avec admin via php
+geolocalisation
+apk rta pour gestion planing et suivi des taches

@@ -1,0 +1,13 @@
+installation de php :
+xampp :  - ici on a utiliser la version PHP 8.1.2
+         - avec l'installation de composer il n'est plus necessaire de modifier xampp
+composer : "si l'installation fait des erreurs utiliser un wifi ou mega 100ar " puis refaire l'installation" ca devrait maintenant marche"
+Nb on peut desinstaller xampp version 7 et d'installer xampp version 8 sans modifier composer
+verification sur terminale : 
+   php --version
+=>            composer create-project laravel/laravel crud
+patienter 10 mn  si sans connection
+
+=>verifier bien que vendor est là avec le fichier autoload.php
+php artisan serve
+http://127.0.0.1:8000

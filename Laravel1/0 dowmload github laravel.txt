@@ -1,0 +1,105 @@
+telecharger la code source sur github
+extraire   + cd                                              ou git clone https://github...
+ouvrir terminal
+composer install
+modifier .env.example en .env
+         le DB_DATABASE= ...
+creation bd sur phpMyAdmin
+php artisan migrate
+php artisan key:generate
+php artisan storage:link
+php artisan serve
+***************
+
+
+
+Pour coder un programme qui permet d'ouvrir et fermer une boîte avec Laravel 10 depuis l'installation jusqu'à la fin, vous pouvez suivre les étapes suivantes :
+
+1. Installation de Laravel 10 : Commencez par installer Laravel 10 en utilisant la ligne de commande suivante :
+
+
+composer create-project laravel/laravel:^10.0 nom_du_projet
+
+Copy code
+
+
+2. Création du modèle et de la migration : À l'aide de la ligne de commande artisan, créez un modèle et une migration pour la boîte. Exécutez les lignes de commande suivantes :
+
+
+php artisan make:model Boite -m
+
+Copy code
+
+Cela créera à la fois un modèle Boite et une migration correspondante.
+
+3. Modification de la migration : Ouvrez le fichier de migration créé dans le répertoire "database/migrations" et ajoutez les colonnes nécessaires pour votre boîte. Par exemple, vous pouvez ajouter une colonne "etat" pour représenter l'état d'ouverture ou de fermeture de la boîte.
+
+4. Exécution de la migration : Exécutez la migration pour créer la table dans la base de données en utilisant la commande artisan suivante :
+
+
+php artisan migrate
+
+Copy code
+
+
+5. Création des routes et des contrôleurs : Définissez les routes et les contrôleurs nécessaires pour ouvrir et fermer la boîte. Dans le fichier "routes/web.php", vous pouvez ajouter les routes suivantes :
+
+
+Route::get('boite/ouvrir', 'BoiteController@ouvrir');
+Route::get('boite/fermer', 'BoiteController@fermer');
+
+Copy code
+
+
+Dans le fichier "app/Http/Controllers/BoiteController.php", créez les méthodes "ouvrir" et "fermer" correspondantes qui effectueront les actions nécessaires pour ouvrir et fermer la boîte.
+
+6. Implémentation des actions d'ouverture et de fermeture : Dans les méthodes "ouvrir" et "fermer" du contrôleur BoiteController, vous pouvez ajouter la logique pour ouvrir et fermer la boîte en interagissant avec le modèle Boite. Par exemple :
+
+
+public function ouvrir()
+{
+    $boite = new Boite();
+    $boite->etat = 'ouverte';
+    $boite->save();
+
+    return "La boîte a été ouverte avec succès !";
+}
+
+public function fermer()
+{
+    $boite = Boite::latest()->first();
+    $boite->etat = 'fermee';
+    $boite->save();
+
+    return "La boîte a été fermée avec succès !";
+}
+
+Copy code
+
+Cela crée une nouvelle instance du modèle Boite dans la méthode "ouvrir" et enregistre l'état de la boîte en tant que 'ouverte'. Dans la méthode "fermer", il récupère la dernière boîte créée, modifie son état en tant que 'fermée' et l'enregistre.
+
+7. Test du programme : Vous pouvez maintenant tester le programme en accédant aux routes "boite/ouvrir" et "boite/fermer" dans votre navigateur.
+
+Ceci est un exemple simplifié pour vous aider à démarrer. Vous pouvez personnaliser davantage le programme en fonction de vos besoins spécifiques. Assurez-vous également d'inclure les fichiers pertinents, de configurer correctement la base de données et de suivre les pratiques de développement recommandées par Laravel.
+
+Created by https://GPTGO.ai
+#gptgo #chatgpt #freechatgpt #chatgptfree
+https://github.com/laravelteacher/loginScanner
+**************************
+https://github.com/shailesh-ladumor/lpt-pkg-demo/tree/qr_code
+***************************
+
+**************************
+**************************
+
+S C:\Users\tinalalaina\Desktop\initiation a la laravel\admin et utilisateur exe
+rcice> admin and user video sur telephone 
+
+
+
+
+3:45 / 20:17
+
+
+How to Authenticate Multiple Users in Laravel - Multiple User Authentication in Laravel
+multi user.zip

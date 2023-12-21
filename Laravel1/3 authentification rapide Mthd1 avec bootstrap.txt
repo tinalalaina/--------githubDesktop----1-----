@@ -1,0 +1,31 @@
+composer create-project laravel/laravel first_project
+cd first_project
+code .
+php artisan serve
+---------------------
+composer require laravel/ui
+php artisan ui bootstrap
+php artisan ui vue
+php artisan ui:auth
+npm install
+*********
+sur l'interface apparition "login" et "register" 
+*********
+npx mix watch
+npm install vue-loader
+npm run watch
+----------
+xampp bd : firstproject
+.env
+  BD: firstproject
+----------
+modification dans app>Providers>AppServiceProvider.php 
+
+use Illuminate\Support\Facades\Schema; (dont forget this)
+  public function register()
+    {
+        Schema::defaultStringLength(191);
+    }
+
+--
+php artisan migrate

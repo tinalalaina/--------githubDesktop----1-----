@@ -1,0 +1,57 @@
+        Creation d'un page en laravel
+-----------------**************************************************************************************************
+resources>views>(nvdossier)products>index.blade.php
+<h1>Product list</h1>
+
+--------
+Route::get('/products', function () {
+return view('products.index'); ( dossier products + fichier index.blade.php)
+});
+---------
+*************************
+ <a href="/etudiant">Revenir à liste des étudiants</a>
+----------
+installer maintenant ton bootstrap
+-----------------****************************************************************************************************
+-----------------
+composer create-project laravel\laravel customLoginSystem
+
+php artisan serve  =>localhost 8000
+--
+php artisan make:controller CustomAuthController
+--
+app>Http>Controllers>CustomAuthController.php
+
+public function login(){
+  return "Login";
+    }
+    public function registration(){
+   return "Registration";
+    }
+
+--
+routes>web.php
+use App\Http\Controllers\CustomAuthController;
+Route::get('/login',[CustomAuthController::class,'login']);
+Route::get('/registration',[CustomAuthController::class,'registration']);
+--
+http://localhost:8000/login         =>Login
+http://localhost:8000/registration  => Registration
+
+--
+app>Http>Controllers>CustomAuthController.php
+    public function login(){
+  return view("auth.login");
+    }
+    public function registration(){
+        return view("auth.registration");
+    }
+--
+resources>views>auth(nv Ds)>registration.blade.php (nv fichier)  => hello
+                            login.blade.php (nv fichier)         => good luck!
+--
+                 utilisation de bootstrap
+-
+resources>views>auth(nv Ds)>registration.blade.php (nv fichier)
+aller vers bootstrap copier link   place le apres le title 
+                            script                   </body>
